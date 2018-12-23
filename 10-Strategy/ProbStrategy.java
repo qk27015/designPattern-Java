@@ -9,6 +9,7 @@ public class ProbStrategy implements Strategy {
         { 1, 1, 1, },
         { 1, 1, 1, },
     };
+
     public ProbStrategy(int seed) {
         random = new Random(seed);
     }
@@ -26,6 +27,7 @@ public class ProbStrategy implements Strategy {
         currentHandValue = handvalue;
         return Hand.getHand(handvalue);
     }
+
     private int getSum(int hv) {
         int sum = 0;
         for (int i = 0; i < 3; i++) {
@@ -33,6 +35,7 @@ public class ProbStrategy implements Strategy {
         }
         return sum;
     }
+    
     public void study(boolean win) {
         if (win) {
             history[prevHandValue][currentHandValue]++;
