@@ -1,0 +1,25 @@
+public class Printer implements Printable{
+  private String name;
+  public Printer(){ heavyJob("Printerのインスタンスを作成中..."); }
+  public Printer(String name){
+    this.name = name;
+    heavyJob("Printerのインスタンス(" + name + ")を作成中");
+  }
+
+  public void setPrinterName(String name){ this.name = name; }
+  public String getPrinterName(){ return name; }
+
+  public void print(String string){
+    System.out.println("=== " + name + " ===");
+    System.out.println(string);
+  }
+
+  private void heavyJob(String msg){
+    System.out.println(msg);
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException e){
+    }
+    System.out.println("完了");
+  }
+}
